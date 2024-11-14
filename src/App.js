@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import ProductDetail from "./components/phoneDetail/ProductDetail";
+import HomePage from './components/HomePage';
+import BuyNowForm from './components/common/BuyNowForm';
+import OrderSummary from './components/common/OrderSummary';
+import Payment from './components/common/Payment';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='max-w-[480px] mx-auto'>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/buy-now/:id" element={<BuyNowForm />} />
+        <Route path="/OrderSummary" element={<OrderSummary />} />
+        <Route path="/Payment" element={<Payment />} />
+      </Routes>
     </div>
   );
 }
