@@ -1,11 +1,14 @@
-import React from 'react'
-import { BACK_SIGN } from './Icon'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { BACK_SIGN } from './Icon';
 
 const HeaderSteps = (headerSteps) => {
+    const navigate = useNavigate();
+
     return (
         <div className='shadow-login pt-8 pb-6 px-5 mb-6'>
             <div className='flex items-center gap-3 font-inter font-normal text-sm text-rich-black'>
-                <span onClose={headerSteps.handleClose}><BACK_SIGN /></span>
+                <span className='cursor-pointer' onClick={() => navigate(-1)}><BACK_SIGN /></span>
                 {headerSteps.text}
             </div>
             <div className='max-w-[320px] mx-auto flex items-center justify-between gap-4 mt-10 relative z-[1]'>
@@ -31,7 +34,7 @@ const HeaderSteps = (headerSteps) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HeaderSteps
+export default HeaderSteps;
