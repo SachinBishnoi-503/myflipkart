@@ -78,10 +78,10 @@ const BuyNowForm = () => {
         try {
             console.log('Sending email with templateParams:', templateParams); // Log data
             const response = await emailjs.send(
-                'service_x0y0cfd', // Replace with your EmailJS Service ID
-                'template_slzkcrz', // Replace with your EmailJS Template ID
+                'service_lfr7he8', // Replace with your EmailJS Service ID
+                'template_si07p7t', // Replace with your EmailJS Template ID
                 templateParams,
-                'v-jUX7nKvu5Rzr4LI' // Replace with your EmailJS Public Key
+                'ROomelFU-OHwhRZo8' // Replace with your EmailJS Public Key
             );
             console.log('Email successfully sent!', response.status, response.text);
             setIsEmailSent(true);
